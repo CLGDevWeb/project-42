@@ -1,0 +1,20 @@
+{
+    "name": "clgdevweb/project-42",
+    "description": "A php micro-framework",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Girardot Charles-Louis",
+            "email": "clgdevweb@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Framework\\": "core/"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "6.3.x-dev"
+    }
+}
