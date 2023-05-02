@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Framework\Http;
 
 class Response
@@ -8,8 +10,7 @@ class Response
         public readonly ?string $content = '',
         public readonly int $status = 200,
         public readonly array $headers = [],
-    )
-    {}
+    ) {}
 
     public function send(): void
     {
