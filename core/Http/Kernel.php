@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Framework\Http;
 
+use Framework\Http\Routing\Router;
+
 class Kernel
 {
     public function __construct(private Router $router)
