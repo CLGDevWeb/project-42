@@ -10,7 +10,10 @@ class Response
         public readonly ?string $content = '',
         public readonly int $status = 200,
         public readonly array $headers = [],
-    ) {}
+    ) 
+    {
+        http_response_code($this->status);
+    }
 
     public function send(): void
     {

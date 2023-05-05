@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Framework\Http;
 
+use Framework\Http\Exception\HttpException;
 use Framework\Http\Routing\Router;
 
 class Kernel
@@ -16,11 +17,11 @@ class Kernel
         try {
             [$routeHandler, $vars] = $this->router->dispatch($request);
 
-            $response  = call_user_func_array($routeHandler, $vars);
+            return call_user_func_array($routeHandler, $vars);
+        } catch(HttpException $e) {
+            return new Response($e->getMessage(), $e->getCode());
         } catch(\Exception $e) {
-            $response = new Response($e->getMessage(), 400); //fix status
+            return new Response($e->getMessage(), 500); //fix status
         }
-        
-        return $response;
     }
 }

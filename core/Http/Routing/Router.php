@@ -43,8 +43,8 @@ class Router implements RouterInterface
 
         return match($routeInfo[0]) {
             Dispatcher::FOUND => [$routeInfo[1], $routeInfo[2]],
-            Dispatcher::METHOD_NOT_ALLOWED => throw new HttpRequestMethodException("The allowed methods are : " . implode(', ', $routeInfo[1])),
-            default => throw new HttpException('Not found')
+            Dispatcher::METHOD_NOT_ALLOWED => throw new HttpRequestMethodException("The allowed methods are : " . implode(', ', $routeInfo[1]), 405),
+            default => throw new HttpException('Not found', 404)
         };
     }
 }
