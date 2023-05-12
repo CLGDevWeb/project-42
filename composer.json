@@ -14,10 +14,16 @@
             "Framework\\": "core/"
         }
     },
+    "repositories": [
+        {
+            "type" : "vcs",
+            "url": "https://github.com/CLGDevWeb/FastRoute.git"
+        }
+    ],
     "require-dev": {
         "symfony/var-dumper": "6.3.x-dev"
     },
     "require": {
-        "nikic/fast-route": "^2.0@dev"
+        "nikic/fast-route": "dev-fork"
     }
 }
