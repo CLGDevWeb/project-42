@@ -4,20 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "07141984191391c0cd10552247361d8f",
+    "content-hash": "cb1710cda0dc1b09f58b9a8fa6b5391d",
     "packages": [
         {
+            "name": "clgdevweb/project-42",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "core",
+                "reference": "299204a19039d1e9a58109431e49d3de5c5bfb78"
+            },
+            "require": {
+                "nikic/fast-route": "dev-master"
+            },
+            "require-dev": {
+                "symfony/var-dumper": "6.3.x-dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Framework\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Girardot Charles-Louis",
+                    "email": "clgdevweb@gmail.com"
+                }
+            ],
+            "description": "A PHP framework tutorial project",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "nikic/fast-route",
-            "version": "dev-fork",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/CLGDevWeb/FastRoute.git",
-                "reference": "54f58e62974c568a7029707016d0c870d94535f1"
+                "url": "https://github.com/nikic/FastRoute.git",
+                "reference": "34128a32009e1b41c4615bcd7d4c39968931e9ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CLGDevWeb/FastRoute/zipball/54f58e62974c568a7029707016d0c870d94535f1",
-                "reference": "54f58e62974c568a7029707016d0c870d94535f1",
+                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/34128a32009e1b41c4615bcd7d4c39968931e9ea",
+                "reference": "34128a32009e1b41c4615bcd7d4c39968931e9ea",
                 "shasum": ""
             },
             "require": {
@@ -36,6 +70,7 @@
             "suggest": {
                 "ext-apcu": "To be able to use APCu cache driver"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -43,19 +78,14 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "FastRoute\\": "src/"
-                },
                 "files": [
                     "src/functions.php"
-                ]
-            },
-            "autoload-dev": {
+                ],
                 "psr-4": {
-                    "FastRoute\\Benchmark\\": "benchmark/",
-                    "FastRoute\\Test\\": "test/"
+                    "FastRoute\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -71,9 +101,10 @@
                 "routing"
             ],
             "support": {
-                "source": "https://github.com/CLGDevWeb/FastRoute/tree/fork"
+                "issues": "https://github.com/nikic/FastRoute/issues",
+                "source": "https://github.com/nikic/FastRoute/tree/master"
             },
-            "time": "2023-05-12T13:33:32+00:00"
+            "time": "2023-03-16T08:06:25+00:00"
         }
     ],
     "packages-dev": [
@@ -248,7 +279,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "nikic/fast-route": 20,
+        "clgdevweb/project-42": 20,
         "symfony/var-dumper": 20
     },
     "prefer-stable": false,

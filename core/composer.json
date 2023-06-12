@@ -1,0 +1,35 @@
+{
+    "name": "clgdevweb/project-42",
+    "description": "A PHP framework tutorial project",
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Girardot Charles-Louis",
+            "email": "clgdevweb@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Framework\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Framework\\Tests\\": "tests"
+        }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "6.3.x-dev",
+        "phpunit/phpunit": "^10.3@dev"
+    },
+    "require": {
+        "nikic/fast-route": "dev-master",
+        "psr/container": "^2.0@dev"
+    },
+    "scripts": {
+        "tests": [
+            "./vendor/bin/phpunit tests --colors"
+        ]
+    }
+}
