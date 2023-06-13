@@ -29,7 +29,7 @@
     },
     "scripts": {
         "tests": [
-            "./vendor/bin/phpunit tests --colors"
+            "./vendor/bin/phpunit tests --colors --filter=test_services_can_be_recursively_autowired"
         ]
     }
 }

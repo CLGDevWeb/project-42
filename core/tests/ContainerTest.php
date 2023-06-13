@@ -25,4 +25,25 @@ class ContainerTest extends TestCase
         
         $container->add('unknown-class');
     }
+
+    public function test_can_check_if_the_container_has_a_service(): void
+    {
+        $container = new Container();
+
+        $container->add('dependant-class', DependantClass::class);
+
+        $this->assertTrue($container->has('dependant-class'));
+        $this->assertFalse($container->has('unknown-class'));
+    }
+
+    public function test_services_can_be_recursively_autowired(): void
+    {
+        $container = new Container();
+
+        $dependantService = $container->get(DependantClass::class);
+        $dependancyService = $dependantService->getDependency();
+
+        $this->assertInstanceOf(DependencyClass::class, $dependancyService);
+        $this->assertInstanceOf(SubDependencyClass::class, $dependancyService->getSubDependency());
+    }
 }
