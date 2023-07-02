@@ -8,7 +8,7 @@ use League\Container\Argument\Literal\StringArgument;
 use League\Container\ReflectionContainer;
 
 $dotenv = new \Symfony\Component\Dotenv\Dotenv();
-$dotenv->load(dirname(__DIR__) . '/.env');
+$dotenv->load(BASE_PATH . '/.env');
 
 $container = new \League\Container\Container();
 
@@ -17,6 +17,7 @@ $container->delegate(new ReflectionContainer(true));
 # parameters for app config
 $routes = include BASE_PATH . '/routes/web.php';
 $appEnv = $_SERVER['APP_ENV'];
+$viewsPath = BASE_PATH . '/views';
 
 $container->add('APP_ENV', new StringArgument($appEnv));
 
@@ -29,5 +30,11 @@ $container->extend(RouterInterface::class)
 $container->add(Kernel::class)
     ->addArgument(RouterInterface::class)
     ->addArgument($container);
+
+$container->addShared('filesystem-loader', \Twig\Loader\FilesystemLoader::class)
+    ->addArgument(new StringArgument($viewsPath));
+
+$container->addShared(\Twig\Environment::class)
+    ->addArgument('filesystem-loader');
 
 return $container;

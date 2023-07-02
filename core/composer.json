@@ -27,7 +27,8 @@
         "nikic/fast-route": "dev-master",
         "psr/container": "^2.0@dev",
         "league/container": "^4.0.0",
-        "symfony/dotenv": "^6.0"
+        "symfony/dotenv": "^6.0",
+        "twig/twig": "^3.0"
     },
     "scripts": {
         "tests": [
